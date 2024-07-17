@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <script src="./assets/js/script.js" defer></script>
+  </head>
+  <body>
+    <svg class="all-svg">
+      <symbol
+        id="play"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth="{1.5}"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z"
+        />
+      </symbol>
+      <symbol
+        id="pause"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth="{1.5}"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M15.75 5.25v13.5m-7.5-13.5v13.5"
+        />
+      </symbol>
+      <symbol
+        id="fullScreen"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth="{1.5}"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"
+        />
+      </symbol>
+      <symbol
+        id="defuatScreen"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth="{1.5}"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M9 9V4.5M9 9H4.5M9 9 3.75 3.75M9 15v4.5M9 15H4.5M9 15l-5.25 5.25M15 9h4.5M15 9V4.5M15 9l5.25-5.25M15 15h4.5M15 15v4.5m0-4.5 5.25 5.25"
+        />
+      </symbol>
+      <symbol
+        id="pip"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth="{1.5}"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+        />
+      </symbol>
+      <symbol
+        id="volume"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth="{1.5}"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"
+        />
+      </symbol>
+      <symbol
+        id="volume-mute"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth="{1.5}"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6 4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"
+        />
+      </symbol>
+    </svg>
+
+    <div class="video-container paused" data-volume-level="high">
+      <img class="thumbneil-img" />
+      <div class="video-controls-container">
+        <div class="timeline-container">
+          <div class="timeline">
+            <img class="prevview-img" />
+            <div class="thumb-indicator"></div>
+          </div>
+        </div>
+        <div class="controls">
+          <button class="play-puase-btn">
+            <svg class="svg-icon play-icon">
+              <use xlink:href="#play"></use>
+            </svg>
+            <svg class="svg-icon pause-icon">
+              <use xlink:href="#pause"></use>
+            </svg>
+          </button>
+          <div class="volume-container">
+            <button class="mute-btn">
+              <svg class="svg-icon volume-high">
+                <use xlink:href="#volume"></use>
+              </svg>
+              <svg class="svg-icon volume-mute">
+                <use xlink:href="#volume-mute"></use>
+              </svg>
+            </button>
+
+            <input
+              class="volume-slider"
+              type="range"
+              min="0"
+              max="1"
+              step="any"
+              value="1"
+            />
+          </div>
+          <div class="duration-container">
+            <div class="current-time">00:00</div>
+            /
+            <div class="total-time"></div>
+          </div>
+
+          <button class="speed-btn wide-btn">1x</button>
+
+          <button class="mini-player__btn">
+            <svg class="svg-icon">
+              <use xlink:href="#pip"></use>
+            </svg>
+          </button>
+          <button class="full-screen__btn">
+            <svg class="svg-icon open">
+              <use xlink:href="#fullScreen"></use>
+            </svg>
+            <svg class="svg-icon close">
+              <use xlink:href="#defuatScreen"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <video src="./assets/video/6J.mp4"></video>
+    </div>
+  </body>
+</html>
