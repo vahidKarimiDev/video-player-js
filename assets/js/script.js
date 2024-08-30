@@ -12,9 +12,7 @@ const thumbneilImg = document.querySelector('.thumbneil-img');
 const timelineContainer = document.querySelector('.timeline-container');
 const video = document.querySelector('video');
 
-
 document.addEventListener('keydown', e => {
-
     const tagName = document.activeElement.tagName.toLowerCase();
 
     if (tagName === "input") return;
@@ -42,10 +40,8 @@ document.addEventListener('keydown', e => {
         case "l":
             skip(5)
             break;
-
     }
 })
-
 
 // Time Line
 let isScrubbing = false;
@@ -73,8 +69,6 @@ const hadnelTimelineUpdate = (e) => {
     let percent = Math.min(Math.max(0, e.x - rect.x), rect.width) / rect.width;
     if (percent >= 0.9313008) {
         percent = 0.9313008;
-        
-
     } else if (percent <= 0.072560969) {
         percent = 0.072560969
     }
@@ -86,7 +80,6 @@ const hadnelTimelineUpdate = (e) => {
         e.preventDefault();
         timelineContainer.style.setProperty('--position-porgress', percent)
     }
-
 }
 
 timelineContainer.addEventListener('mousemove', hadnelTimelineUpdate);
@@ -98,7 +91,6 @@ document.addEventListener('mousemove', e => {
     if (isScrubbing) hadnelTimelineUpdate(e)
 })
 
-
 // PlayBack Speed
 const toggleSpeed = () => {
     let newPlayBackRate = video.playbackRate + 0.25;
@@ -109,7 +101,6 @@ const toggleSpeed = () => {
 
 speedBtn.addEventListener('click', toggleSpeed);
 
-
 // Time
 video.addEventListener('loadeddata', () => {
     totalTime.textContent = formatDurration(video.duration)
@@ -119,8 +110,6 @@ video.addEventListener('timeupdate', () => {
     currentTime.textContent = formatDurration(video.currentTime);
     const percent = video.currentTime / video.duration
     timelineContainer.style.setProperty('--position-porgress', percent)
-
-
 })
 
 const leadingZeroFormated = new Intl.NumberFormat(undefined, {
@@ -137,13 +126,11 @@ const formatDurration = (time) => {
     } else {
         return `${hours}:${leadingZeroFormated.format(minutes)}:${leadingZeroFormated.format(seconds)}`
     }
-
 }
 
 const skip = (duration) => {
     video.currentTime += duration
 }
-
 
 // Volume
 const toggleMute = () => {
@@ -154,7 +141,6 @@ video.addEventListener('volumechange', () => {
     volumeSlider.value = video.volume;
 
     let volumeLevel;
-
 
     if (video.muted || video.volume === 0) {
         volumeSlider.value = 0;
@@ -175,12 +161,10 @@ volumeSlider.addEventListener('input', (e) => {
     video.muted = e.target.value === 0
 })
 
-
 // View Mode 
 const toggleMiniPlayMode = () => {
     if (videoContainer.classList.contains('mini-player')) {
         document.exitPictureInPicture()
-
     } else {
         video.requestPictureInPicture()
     }
